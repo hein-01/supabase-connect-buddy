@@ -5,6 +5,7 @@ import { ArrowUpRight, Car, ShoppingBag, Wrench, Shield } from "lucide-react";
 const pillars = [
   {
     to: "/marketplace",
+    search: { category: "cars" as const },
     icon: Car,
     title: "Buy & sell EVs",
     desc: "Browse new and used electric cars from verified sellers across Myanmar. Filter by range, brand and price in MMK.",
@@ -14,6 +15,7 @@ const pillars = [
   },
   {
     to: "/marketplace",
+    search: { category: "accessories" as const },
     icon: ShoppingBag,
     title: "Accessories & parts",
     desc: "Home chargers, cables, dashcams, tyres, mats — everything for your EV from local shops.",
@@ -23,6 +25,7 @@ const pillars = [
   },
   {
     to: "/services",
+    search: undefined,
     icon: Wrench,
     title: "Workshops & repair",
     desc: "Find certified EV mechanics in Yangon, Mandalay and beyond. See specialties, ratings and pricing upfront.",
@@ -32,6 +35,7 @@ const pillars = [
   },
   {
     to: "/services",
+    search: undefined,
     icon: Shield,
     title: "Insurance & finance",
     desc: "Compare EV-specific insurance plans and financing options from Myanmar's top providers.",
@@ -62,6 +66,7 @@ export function Pillars() {
             >
               <Link
                 to={p.to as "/marketplace"}
+                search={p.search as never}
                 className={`group relative block overflow-hidden rounded-3xl border border-border bg-gradient-to-br ${p.hue} p-7 transition hover:border-electric/40 hover:-translate-y-1`}
                 style={{ boxShadow: "var(--shadow-card)" }}
               >

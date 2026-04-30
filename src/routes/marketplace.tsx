@@ -3,7 +3,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Car, ShoppingBag, Bell, ArrowRight } from "lucide-react";
 
+type MarketplaceSearch = { category?: "cars" | "accessories" };
+
 export const Route = createFileRoute("/marketplace")({
+  validateSearch: (search: Record<string, unknown>): MarketplaceSearch => {
+    const c = search.category;
+    return c === "cars" || c === "accessories" ? { category: c } : {};
+  },
   head: () => ({
     meta: [
       { title: "EV Marketplace — Buy & sell EVs and accessories in Myanmar" },
@@ -30,6 +36,9 @@ const previewParts = [
 ];
 
 function MarketplacePage() {
+  const { category } = Route.useSearch();
+  const showCars = category !== "accessories";
+  const showAccessories = category !== "cars";
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -76,6 +85,7 @@ function MarketplacePage() {
           </div>
 
           {/* Cars preview */}
+          {showCars && (
           <PreviewSection icon={Car} title="Electric cars" subtitle="A taste of what's coming">
             {previewCars.map((c) => (
               <div key={c.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-electric/40" style={{ boxShadow: "var(--shadow-card)" }}>
@@ -90,8 +100,10 @@ function MarketplacePage() {
               </div>
             ))}
           </PreviewSection>
+          )}
 
           {/* Accessories preview */}
+          {showAccessories && (
           <PreviewSection icon={ShoppingBag} title="Accessories & parts" subtitle="Chargers, tires, electronics & more">
             {previewParts.map((p) => (
               <div key={p.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-electric/40" style={{ boxShadow: "var(--shadow-card)" }}>
@@ -104,6 +116,7 @@ function MarketplacePage() {
               </div>
             ))}
           </PreviewSection>
+          )}
 
           <div className="my-20 rounded-3xl border border-dashed border-border p-10 text-center">
             <div className="font-display text-2xl font-bold">Want to be a launch seller?</div>

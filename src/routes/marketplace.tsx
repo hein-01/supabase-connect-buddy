@@ -100,8 +100,10 @@ function MarketplacePage() {
               </div>
             ))}
           </PreviewSection>
+          )}
 
           {/* Accessories preview */}
+          {showAccessories && (
           <PreviewSection icon={ShoppingBag} title="Accessories & parts" subtitle="Chargers, tires, electronics & more">
             {previewParts.map((p) => (
               <div key={p.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-electric/40" style={{ boxShadow: "var(--shadow-card)" }}>

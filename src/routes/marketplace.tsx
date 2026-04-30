@@ -85,6 +85,7 @@ function MarketplacePage() {
           </div>
 
           {/* Cars preview */}
+          {showCars && (
           <PreviewSection icon={Car} title="Electric cars" subtitle="A taste of what's coming">
             {previewCars.map((c) => (
               <div key={c.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-electric/40" style={{ boxShadow: "var(--shadow-card)" }}>

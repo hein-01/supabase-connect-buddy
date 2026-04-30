@@ -26,7 +26,7 @@ export function StationsPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group rounded-2xl border border-border bg-card p-5 transition hover:border-electric/40 hover:-translate-y-0.5"
+              className="group rounded-2xl border border-border/60 bg-gradient-to-br from-electric/5 via-surface to-eco/5 p-5 backdrop-blur-sm transition hover:border-electric/40 hover:-translate-y-0.5 hover:from-electric/10 hover:to-eco/10"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="flex items-start justify-between gap-3">

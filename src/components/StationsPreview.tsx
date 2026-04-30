@@ -48,6 +48,22 @@ export function StationsPreview() {
                 <span className="flex items-center gap-1 font-semibold"><Zap className="h-3.5 w-3.5 text-electric" /> {s.maxKw} kW</span>
                 <span className="text-muted-foreground">{s.pricePerKwh} <span className="text-xs">MMK/kWh</span></span>
               </div>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <a
+                  href="tel:+959000000000"
+                  className="inline-flex h-9 items-center justify-center gap-1.5 rounded-full border border-border bg-secondary text-xs font-semibold transition hover:border-electric/40 hover:text-electric"
+                >
+                  <Phone className="h-3.5 w-3.5" /> Call
+                </a>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-9 items-center justify-center gap-1.5 rounded-full bg-foreground text-xs font-semibold text-background transition hover:opacity-90"
+                >
+                  <Navigation className="h-3.5 w-3.5" /> Directions
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

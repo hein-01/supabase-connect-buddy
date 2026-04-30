@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { stations } from "@/data/mock";
-import { MapPin, Zap, Filter, Search, Clock, Map as MapIcon, List, Phone, Navigation } from "lucide-react";
+import { MapPin, Zap, Filter, Search, Clock, Map as MapIcon, List, Phone, Navigation, Route as RouteIcon } from "lucide-react";
 import { useMemo, useState, lazy, Suspense } from "react";
 
 const StationsMap = lazy(() =>
@@ -112,7 +112,7 @@ function StationsPage() {
             </div>
           ) : (
           <div className="grid gap-4 pb-20 md:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((s) => (
+            {filtered.map((s, i) => (
               <div
                 key={s.id}
                 className="group rounded-2xl border border-border bg-card p-5 transition hover:border-electric/40"
@@ -128,6 +128,16 @@ function StationsPage() {
                 </div>
                 <h3 className="mt-4 font-display text-lg font-bold">{s.name}</h3>
                 <div className="mt-1 text-sm text-muted-foreground">{s.city} · {s.operator}</div>
+                <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 font-medium text-foreground">
+                    <RouteIcon className="h-3.5 w-3.5 text-electric" />
+                    {(0.3 + i * 0.4).toFixed(1)} miles
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <Clock className="h-3.5 w-3.5" />
+                    {s.hours}
+                  </span>
+                </div>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {s.connectors.map((c) => (
                     <span key={c} className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium">{c}</span>

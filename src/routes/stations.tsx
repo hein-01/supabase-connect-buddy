@@ -118,10 +118,7 @@ function StationsPage() {
                 className="group rounded-2xl border border-border bg-card p-5 transition hover:border-electric/40"
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-electric/10">
-                    <MapPin className="h-5 w-5 text-electric" />
-                  </div>
+                <div className="flex items-start justify-end">
                   <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${s.available > 0 ? "bg-eco/15 text-eco" : "bg-ruby/15 text-ruby"}`}>
                     {s.available > 0 ? `${s.available}/${s.total} free` : "All busy"}
                   </span>

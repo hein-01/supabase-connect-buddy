@@ -116,6 +116,7 @@ function MarketplacePage() {
               </div>
             ))}
           </PreviewSection>
+          )}
 
           <div className="my-20 rounded-3xl border border-dashed border-border p-10 text-center">
             <div className="font-display text-2xl font-bold">Want to be a launch seller?</div>

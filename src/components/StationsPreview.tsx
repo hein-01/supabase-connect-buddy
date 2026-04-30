@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { MapPin, Zap, ArrowRight } from "lucide-react";
+import { MapPin, Zap, ArrowRight, Phone, Navigation } from "lucide-react";
 import { stations } from "@/data/mock";
 
 export function StationsPreview() {

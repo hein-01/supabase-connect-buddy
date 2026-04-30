@@ -66,6 +66,7 @@ export function Pillars() {
             >
               <Link
                 to={p.to as "/marketplace"}
+                search={p.search as never}
                 className={`group relative block overflow-hidden rounded-3xl border border-border bg-gradient-to-br ${p.hue} p-7 transition hover:border-electric/40 hover:-translate-y-1`}
                 style={{ boxShadow: "var(--shadow-card)" }}
               >

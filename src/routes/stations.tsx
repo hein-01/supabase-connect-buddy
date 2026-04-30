@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { stations } from "@/data/mock";
-import { MapPin, Zap, Filter, Search, Clock, Map as MapIcon, List, Phone, Navigation } from "lucide-react";
+import { MapPin, Zap, Filter, Search, Clock, Map as MapIcon, List, Phone, Navigation, Route as RouteIcon } from "lucide-react";
 import { useMemo, useState, lazy, Suspense } from "react";
 
 const StationsMap = lazy(() =>

@@ -36,6 +36,9 @@ const previewParts = [
 ];
 
 function MarketplacePage() {
+  const { category } = Route.useSearch();
+  const showCars = category !== "accessories";
+  const showAccessories = category !== "cars";
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

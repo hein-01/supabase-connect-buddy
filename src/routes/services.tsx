@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Wrench, Shield, Star, MapPin, ArrowRight } from "lucide-react";
+import { Wrench, Shield, Star, MapPin, ArrowRight, Phone, Navigation } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

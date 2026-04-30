@@ -5,6 +5,7 @@ import { ArrowUpRight, Car, ShoppingBag, Wrench, Shield } from "lucide-react";
 const pillars = [
   {
     to: "/marketplace",
+    search: { category: "cars" as const },
     icon: Car,
     title: "Buy & sell EVs",
     desc: "Browse new and used electric cars from verified sellers across Myanmar. Filter by range, brand and price in MMK.",
@@ -14,6 +15,7 @@ const pillars = [
   },
   {
     to: "/marketplace",
+    search: { category: "accessories" as const },
     icon: ShoppingBag,
     title: "Accessories & parts",
     desc: "Home chargers, cables, dashcams, tyres, mats — everything for your EV from local shops.",
@@ -23,6 +25,7 @@ const pillars = [
   },
   {
     to: "/services",
+    search: undefined,
     icon: Wrench,
     title: "Workshops & repair",
     desc: "Find certified EV mechanics in Yangon, Mandalay and beyond. See specialties, ratings and pricing upfront.",

@@ -153,8 +153,8 @@ function StationsPage() {
                     <div className="font-semibold">{s.pricePerKwh} <span className="text-muted-foreground">MMK</span></div>
                   </div>
                   <div>
-                    <div className="text-muted-foreground">Hours</div>
-                    <div className="font-semibold flex items-center gap-1"><Clock className="h-3 w-3" />{s.hours.split(" ")[0]}</div>
+                    <div className="text-muted-foreground">Location</div>
+                    <div className="font-semibold flex items-center gap-1"><MapPin className="h-3 w-3" />Kamayut</div>
                   </div>
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-2">

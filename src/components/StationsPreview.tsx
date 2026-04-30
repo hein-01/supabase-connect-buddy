@@ -29,13 +29,15 @@ export function StationsPreview() {
               className="group rounded-2xl border border-border/60 bg-gradient-to-br from-electric/5 via-surface to-eco/5 p-5 backdrop-blur-sm transition hover:border-electric/40 hover:-translate-y-0.5 hover:from-electric/10 hover:to-eco/10"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="flex items-start justify-end gap-3">
-                <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${s.available > 0 ? "bg-eco/15 text-eco" : "bg-ruby/15 text-ruby"}`}>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="font-display text-lg font-bold">{s.name}</h3>
+                  <div className="mt-1 text-sm text-muted-foreground">{s.city} · {s.operator}</div>
+                </div>
+                <span className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${s.available > 0 ? "bg-eco/15 text-eco" : "bg-ruby/15 text-ruby"}`}>
                   {s.available > 0 ? `${s.available} free` : "Busy"}
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-lg font-bold">{s.name}</h3>
-              <div className="mt-1 text-sm text-muted-foreground">{s.city} · {s.operator}</div>
               <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1 font-medium text-foreground">
                   <RouteIcon className="h-3.5 w-3.5 text-electric" />

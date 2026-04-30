@@ -3,7 +3,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Car, ShoppingBag, Bell, ArrowRight } from "lucide-react";
 
+type MarketplaceSearch = { category?: "cars" | "accessories" };
+
 export const Route = createFileRoute("/marketplace")({
+  validateSearch: (search: Record<string, unknown>): MarketplaceSearch => {
+    const c = search.category;
+    return c === "cars" || c === "accessories" ? { category: c } : {};
+  },
   head: () => ({
     meta: [
       { title: "EV Marketplace — Buy & sell EVs and accessories in Myanmar" },

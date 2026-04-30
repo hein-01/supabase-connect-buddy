@@ -29,10 +29,7 @@ export function StationsPreview() {
               className="group rounded-2xl border border-border/60 bg-gradient-to-br from-electric/5 via-surface to-eco/5 p-5 backdrop-blur-sm transition hover:border-electric/40 hover:-translate-y-0.5 hover:from-electric/10 hover:to-eco/10"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-electric/10">
-                  <MapPin className="h-5 w-5 text-electric" />
-                </div>
+              <div className="flex items-start justify-end gap-3">
                 <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${s.available > 0 ? "bg-eco/15 text-eco" : "bg-ruby/15 text-ruby"}`}>
                   {s.available > 0 ? `${s.available} free` : "Busy"}
                 </span>
